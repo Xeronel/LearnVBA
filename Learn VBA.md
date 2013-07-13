@@ -116,27 +116,23 @@ A **Variant** can hold any kind of data including Empty, Error, Nothing, and Nul
 
 ```VB
 Sub Example()
-    Dim Var As Variant   'Create a variable named NumberList of type Variant
-    Dim i As Integer     'Create a variable named i of type Integer
+    Dim MyVar As Variant   'Create a variable named MyVar of type Variant
 
-    Var = "A"                               'Store A in Var
-    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
-    
-    Var = 1                                 'Store 1 in Var
-    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
-    
-    Var = True                              'Store True in Var
-    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
+    MyVar = "A"                               	'Store A in MyVar
+    Debug.Print "MyVar is a " & TypeName(MyVar) 'Write the data type of Var to the screen
+
+    MyVar = 1                                	'Store 1 in MyVar
+    Debug.Print "MyVar is a " & TypeName(MyVar) 'Write the data type of Var to the screen
+
+    MyVar = True								'Store True in MyVar
+    Debug.Print "MyVar is a " & TypeName(MyVar) 'Write the data type of Var to the screen
 End Sub
 ```
 
 Result:
->NumberList is a Variant()
->NumberList contains a String
->1
->2
->3
->4
+>MyVar is a String
+>MyVar is a Integer
+>MyVar is a Boolean
 
 <sub>[Go to top](#pagetop)</sub>
 
