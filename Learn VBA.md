@@ -15,6 +15,8 @@
 |[Range](#Range)|An object that stores a single cell or a range cells.|
 |[Object](#Object)|A generic type that can hold any object.|
 
+**[^^^](#Top)**
+
 ----------
 ### <a name="IntLong" href="#IntLong">Integer / Long</a> ###
 Any whole number between -32,768 and 32,767.
@@ -39,6 +41,8 @@ Result:
 >8
 >16
 
+**[^^^](#Top)**
+
 ----------
 ### <a name="Double" href="#Double">Variant</a> ###
 Any number containing a floating point number.
@@ -54,6 +58,8 @@ End Sub
 ```
 Result:
 >11
+
+**[^^^](#Top)**
 
 ----------
 ### <a name="String" href="#String">String</a> ###
@@ -73,6 +79,8 @@ End Sub
 Result:
 >Tanner Reische
 
+**[^^^](#Top)**
+
 ----------
 ### <a name="Boolean" href="#Boolean">Boolean</a> ###
 True of False.
@@ -91,6 +99,8 @@ End Sub
 Result:
 >True
 >False
+
+**[^^^](#Top)**
 
 ----------
 ### <a name="Variant" href="#Variant">Variant</a> ###
@@ -123,6 +133,8 @@ Result:
 >3
 >4
 
+**[^^^](#Top)**
+
 ----------
 ### <a name="Range" href="#Range">Range</a> ###
 An range of cells on a worksheet.
@@ -138,6 +150,8 @@ End Sub
 ```
 Result:
 >![Result](./images/Range_Result.jpg "Result")
+
+**[^^^](#Top)**
 
 ----------
 ### <a name="Object" href="#Object">Object</a> ###
