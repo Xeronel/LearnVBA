@@ -1,24 +1,20 @@
 ### <a name="Top" href="#Top">Data Types</a> ###
 
-
 |Type|Min|Max|
 |----|---|---|
-|<a href="#IntLong">Integer</a>|-32,768|32,767|
-|<a href="#IntLong">Long</a>|-2,147,483,648|
+|[Integer](#IntLong)|-32,768|32,767|
+|[Long](#IntLong)|-2,147,483,648|2,147,483,647|
+|[Double](#Double)|4.9406564584124654 × 10^−324|2.2250738585072009 × 10^308|
+|[String](#String)|0|2147483648|
+|[Boolean](#Boolean)|True|False|
 
 
+|Type|Description|
+|----|-----------|
+|[Variant](#Variant)|Generic type that can contain all other types.|
+|[Range](#Range)|An object that stores a single cell or a range cells.|
+|[Object](#Object)|A generic type that can hold any object.|
 
-2,147,483,647</td></tr>
-<tr><td><a href="#Double">Double</a></td><td>4.9406564584124654 × 10^−324</td><td>2.2250738585072009 × 10^308</td></tr>
-<tr><td><a href="#String">String</a></td><td>0</td><td>2147483648</td></tr>
-<a href="#Boolean">Boolean|True|False
-
-<table>
-<th>Type</th><th>Description</th>
-<tr><td><a href="#Variant">Variant</a></td><td>Generic type that can contain all other types.</td></tr>
-<tr><td><a href="#Range">Range</a></td><td>An object that stores a single cell or a range cells.</td></tr>
-<tr><td><a href="#Object">Object</a></td><td>A generic type that can hold any object.</td></tr>
-</table>
 ----------
 ### <a name="IntLong" href="#IntLong">Integer / Long</a> ###
 Any whole number between -32,768 and 32,767.
@@ -37,6 +33,8 @@ Sub Example()
 	Debug.Print i + l	'This prints 16
 End Sub
 ```
+
+
 Result:
 >8
 >16
