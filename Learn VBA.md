@@ -1,4 +1,5 @@
-### <a name="Top" href="#Top">Data Types</a> ###
+<a name="PageTop"></a>
+### <a name="DataTypes" href="#DataTypes">Data Types</a> ###
 
 |Type|Min|Max|
 |----|---|---|
@@ -15,7 +16,7 @@
 |[Range](#Range)|An object that stores a single cell or a range cells.|
 |[Object](#Object)|A generic type that can hold any object.|
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="IntLong" href="#IntLong">Integer / Long</a> ###
@@ -41,7 +42,7 @@ Result:
 >8
 >16
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="Double" href="#Double">Variant</a> ###
@@ -59,7 +60,7 @@ End Sub
 Result:
 >11
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="String" href="#String">String</a> ###
@@ -79,7 +80,7 @@ End Sub
 Result:
 >Tanner Reische
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="Boolean" href="#Boolean">Boolean</a> ###
@@ -100,7 +101,7 @@ Result:
 >True
 >False
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="Variant" href="#Variant">Variant</a> ###
@@ -133,7 +134,7 @@ Result:
 >3
 >4
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="Range" href="#Range">Range</a> ###
@@ -151,7 +152,7 @@ End Sub
 Result:
 >![Result](./images/Range_Result.jpg "Result")
 
-**[^^^](#Top)**
+[^^^](#PageTop)
 
 ----------
 ### <a name="Object" href="#Object">Object</a> ###
