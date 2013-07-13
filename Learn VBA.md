@@ -1,160 +1,195 @@
-<a name="PageTop"></a>
-### <a name="DataTypes" href="#DataTypes">Data Types</a> ###
+## <a name="pagetop" href="#pagetop">Data Types</a> ##
 
+### <a name=primitives_top href=#primitives_top>Primitives</a> ###
 |Type|Min|Max|
 |----|---|---|
-|[Integer](#IntLong)|-32,768|32,767|
-|[Long](#IntLong)|-2,147,483,648|2,147,483,647|
-|[Double](#Double)|4.9406564584124654 × 10^−324|2.2250738585072009 × 10^308|
-|[String](#String)|0|2147483648|
-|[Boolean](#Boolean)|True|False|
+|[Integer](#intlong)|-32,768|32,767|
+|[Long](#intlong)|-2,147,483,648|2,147,483,647|
+|[Double](#double)|4.9406564584124654 × 10^−324|2.2250738585072009 × 10^308|
+|[String](#string)|0|2147483648|
+|[Boolean](#boolean)|True|False|
 
-
+### <a name=objects_top href=#objects_top>Objects</a> ###
 |Type|Description|
 |----|-----------|
-|[Variant](#Variant)|Generic type that can contain all other types.|
-|[Range](#Range)|An object that stores a single cell or a range cells.|
-|[Object](#Object)|A generic type that can hold any object.|
-
-[^^^](#PageTop)
+|[Variant](#variant)|Generic type that can contain all other types.|
+|[Range](#range)|An object that stores a single cell or a range cells.|
+|[Object](#object)|A generic type that can hold any object.|
 
 ----------
-### <a name="IntLong" href="#IntLong">Integer / Long</a> ###
-Any whole number between -32,768 and 32,767.
+### <a name="intlong" href="#intlong">Integer / Long</a> ###
+An **Integer** can be any whole number between -32,768 and 32,767.
+A **Long** can be any whole number between -2,147,483,648 and 2,147,483,647.
 
-
-Notice how only the whole number is stored and the floating point number is lost.
 ```VB
 Sub Example()
-	Dim i as Integer
-	Dim l as Long
+	Dim i as Integer	'Create a variable named 'i' of type Integer
+	Dim l as Long		'Create a variable named 'l' of type Long
 	
-	i = 8.5
-	l = 8.5
+	i = 8.5		'Assign the value of 8.5 to i
+	l = 8		'Assign the value of 8 to l
 	
-	Debug.Print i 		'This prints 8
-	Debug.Print i + l	'This prints 16
+	'This prints 8, 0.5 is lost because
+	'integers only store whole numbers
+	Debug.Print i		'Write the value of i (8) to the screen
+
+	'Notice how this equals 16 and not 16.5 since 0.5 was discarded
+	Debug.Print i + l	'Write the value of i + l (16) to the screen
 End Sub
 ```
-
 
 Result:
 >8
 >16
 
-[^^^](#PageTop)
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="Double" href="#Double">Variant</a> ###
-Any number containing a floating point number.
+### <a name="double" href="#double">Double</a> ###
+A **Double** is any number containing a floating point value.
 
 ```VB
 Sub Example()
-	Dim Money as Double
-	
-	Money = 5.5
-
-	Debug.Print Money * 2		'Prints 11
+	Dim Money as Double		'Create a variable named Money of type Double
+	Money = 5.5				'Assign the value of 5.5 to Money
+	Debug.Print Money * 2	'Write the value of Money * 2 (11) to the screen
 End Sub
 ```
+
 Result:
 >11
 
-[^^^](#PageTop)
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="String" href="#String">String</a> ###
-Any ASCII character.
+### <a name="string" href="#string">String</a> ###
+A **String** can be any ASCII character between 0 and 255. Characters 0 - 127 are printable characters.
 
 ```VB
 Sub Example()
-	Dim FirstName as String
-	Dim LastName as String
+    Dim FirstName As String		'Create a variable named FirstName of type String
+    Dim LastName As String		'Create a variable named LastName of type String
 
-	FirstName = "Tanner"
-	LastName = "Reische"
+	'Prompt the user for their first name
+    FirstName = InputBox(Prompt:="Enter your first name", Default:="First")
 
-	Debug.Print FirstName & LastName	'Prints a persons name
+	'Prompt the user for their last name
+    LastName = InputBox(Prompt:="Enter your last name", Default:="Last")
+
+	'Write the users name to the screen
+    Debug.Print FirstName & Space(1) & LastName  'Prints a persons name
 End Sub
 ```
-Result:
->Tanner Reische
 
-[^^^](#PageTop)
+Result:
+>![Result](./images/FirstName_Input.jpg)
+>
+>![Result](./images/LastName_Input.jpg)
+>
+> First Last
+
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="Boolean" href="#Boolean">Boolean</a> ###
-True of False.
-
+### <a name="boolean" href="#boolean">Boolean</a> ###
+A **Boolean** value is True or False.
 ```VB
 Sub Example()
-	Dim IsEqual as Boolean
+	Dim IsEqual as Boolean	'Create a variable named IsEqual of type Boolean
 
-	IsEqual = 1 = 1
-	Debug.Print IsEqual		'Prints True
+	IsEqual = 1 = 1			'Store the result of 1 = 1 (True)
+	Debug.Print IsEqual		'Write the value of IsEqual to the screen (True)
 
-	IsEqual = "A" = "B"
-	Debug.Print IsEqual		'Prints False
+	IsEqual = "A" = "B"		'Store the result of "A" = "B"
+	Debug.Print IsEqual		'Write the value of IsEqual to the screen (False)
 End Sub
 ```
 Result:
 >True
 >False
 
-[^^^](#PageTop)
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="Variant" href="#Variant">Variant</a> ###
-A variant is like a container that can hold any data type.
-This is useful if a function can return more than one type of data.
+### <a name="variant" href="#variant">Variant</a> ###
+A **Variant** can hold any kind of data including Empty, Error, Nothing, and Null.
 
 ```VB
 Sub Example()
-    Dim NumberList As Variant
-    Dim i As Integer
+    Dim Var As Variant   'Create a variable named NumberList of type Variant
+    Dim i As Integer     'Create a variable named i of type Integer
 
-    NumberList = Array("1", "2", "3", "4")
-
-    Debug.Print "NumberList is a " & TypeName(NumberList)
-    Debug.Print "NumberList contains a list of " & TypeName(NumberList(0)) & "s"
+    Var = "A"                               'Store A in Var
+    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
     
-	'Print every item in the array NumberList
-    For i = 0 To UBound(NumberList)
-        Debug.Print NumberList(i)
-    Next
+    Var = 1                                 'Store 1 in Var
+    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
+    
+    Var = True                              'Store True in Var
+    Debug.Print "Var is a " & TypeName(Var) 'Write the data type of Var to the screen
 End Sub
 ```
 
-
 Result:
 >NumberList is a Variant()
->NumberList contains a list of Strings
+>NumberList contains a String
 >1
 >2
 >3
 >4
 
-[^^^](#PageTop)
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="Range" href="#Range">Range</a> ###
-An range of cells on a worksheet.
+### <a name="range" href="#range">Range</a> ###
+A **Range** is one or more cells on a worksheet.
 
 ```VB
 Sub Example()
-    Dim rng As Range
-    Dim i As Integer
-    
-    Set rng = Sheets("Sheet1").Cells()
-    rng.Range("A1:J1") = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    Dim rng As Range    'Create a variable named rng of type Range
+    Dim i As Integer    'Create a variable named i of type Integer
+
+    'Set rng equal to cells A1 - J1 on Sheet1
+    Set rng = Sheets("Sheet1").Range("A1:J1")
+
+    'Write 1 - 10 in rng
+    rng = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 End Sub
 ```
+
 Result:
 >![Result](./images/Range_Result.jpg "Result")
 
-[^^^](#PageTop)
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name="Object" href="#Object">Object</a> ###
+### <a name="object" href="#object">Object</a> ###
+An **Object** is a container for an instance of an object or class.
+
+```VB
+Sub Example()
+    Dim oHTTP As Object		'Create an object variable named oHTTP
+
+	'Store the object WinHttp.WinHttpRequest.5.1 in oHTTP
+    Set oHTTP = CreateObject("WinHttp.WinHttpRequest.5.1")
+	
+	'Members of the WinHttpRequest object are now accessible
+	'through the oHTTP object variable
+
+	'Initialize an HTTP GET request for the specified URL
+    oHTTP.Open "GET", "http://halfcrap.com/vba/files/example.txt", False
+	
+    oHTTP.Send				'Send the HTTP request
+    oHTTP.WaitForResponse	'Wait for a response
+
+	'Write the result to the screen
+	Debug.Print oHTTP.responseText
+End Sub
+```
+
+Result:
+>example
+
+<sub>[Go to top](#pagetop)</sub>
 
 ----------
