@@ -1,5 +1,4 @@
 ## <a name="pagetop" href="#pagetop">Data Types</a> ##
-### <a name=32Bit_DataTypes href=#32Bit_DataTypes>32Bit Types</a> ###
 |Type				|Size	|Range									|
 |-------------------|:-----:|---------------------------------------|
 |[Byte](#byte)		|1 byte	|0 to 255								|
