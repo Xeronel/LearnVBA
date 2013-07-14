@@ -1,6 +1,5 @@
 ## <a name="pagetop" href="#pagetop">Data Types</a> ##
-
-### <a name=32Bit_DataTypes href=#32Bit_DataTypes>Primitives</a> ###
+### <a name=32Bit_DataTypes href=#32Bit_DataTypes>32Bit Types</a> ###
 |Type				|Size	|Range									|
 |-------------------|:-----:|---------------------------------------|
 |[Byte](#byte)		|1 byte	|0 to 255								|
@@ -86,6 +85,23 @@ Result:
 <sub>[Go to top](#pagetop)</sub>
 
 ----------
+### <a name="single" href="#single">Single</a> ###
+**Single** holds a single precision floating point value. Single precision numbers store an approximation of a real number. Only use this data type if you do not need the full width of a **Double** and precision is not important.
+
+```VB
+Sub Example()
+    Dim s As Single			'Create a variable of type Single named 's'
+    s = 0.105				'Store the .105 in s
+    Range("A1").Value = s	'Set A1 to the value of s
+End Sub
+```
+
+Result:
+>![Result](./images/Single_Result.jpg)
+
+<sub>[Go to top](#pagetop)</sub>
+
+----------
 ### <a name="double" href="#double">Double</a> ###
 A **Double** is any number containing a floating point value.
 
@@ -99,6 +115,41 @@ End Sub
 
 Result:
 >![Result](./images/Dbl_Result.jpg)
+
+<sub>[Go to top](#pagetop)</sub>
+
+----------
+### <a name="currency" href="#currency">Currency</a> ###
+**Currency** can store up to 15 digits to the left of the decimal point and 4 digits to the right.
+
+```VB
+Sub Example()
+    Dim c As Currency		'Create a variable of type Currency named 'c'
+    c = 1.4					'Store 1.4 in c
+    Range("A1").Value = c	'Set A1 to the value of c
+End Sub
+```
+
+Result:
+>![Result](./images/Cur_Result.jpg)
+
+<sub>[Go to top](#pagetop)</sub>
+
+----------
+### <a name="date" href="#date">Date</a> ###
+**Date** can be any date from January 1, 100 to December 31, 9999.
+When specifying a date literal you must enclose the date with '#'.
+
+```VB
+Sub Example()
+    Dim dt As Date			'Create a variable of type Date named 'dt'
+    dt = #1/21/2013#		'Assign the date Jan 1, 2013 to dt
+    Range("A1").Value = dt	'Set A1 to the value of dt
+End Sub
+```
+
+Result:
+>![Result](./images/Date_Result.jpg)
 
 <sub>[Go to top](#pagetop)</sub>
 
@@ -125,7 +176,7 @@ A **Variant** can hold any kind of data including Empty, Error, Nothing, and Nul
 
 ```VB
 Sub Example()
-    Dim MyVar As Variant   'Create a variable  of type Variant named 'MyVar'
+    Dim MyVar As Variant  				'Create a variable  of type Variant named 'MyVar'
 
     MyVar = "A"							'Store the string A in MyVar
     Range("A1").Value = TypeName(MyVar) 'Set A1 to the current data type of MyVar
