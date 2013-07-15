@@ -2,11 +2,11 @@
 
 ### Sections ###
 
+[Variables](#variables)
 
-### Keywords ###
 
 ----------
-### Variables ###
+### <a name=variables href=#variables>Variables</a> ###
 A **Variable** is a named place in memory used to store data. Every variable has a **type**
 
 --
@@ -23,8 +23,9 @@ Originally **Dim** stood for *Dimension* (in BASIC), and was used to define the 
 Dim VarName as Integer
 ```
 
-**Dim** states that you want to create a variable.
-**VarName** is the name of the variable being created. This is how you store and access data in your program.
-**Integer** is the type of data that will be stored in your variable.
+A variable declaration has three parts:
+**Dim** - Lets the computer know that you are declaring a variable.
+**VarName** - The name of the variable being created.
+**Integer** - The [type of data](./Data Types.html) that will be stored in your variable.
 
---
+----------
