@@ -13,15 +13,11 @@ A **For** loop repeats a block of code the specified number of times.
 
 ```VB
 Sub Example()
-    Dim i As Integer    'Create a variable to use as a loop counter
-
-    ' This will repeat the code between 'For' and 'Next' until 'i' reaches 10
-    ' 'i' will start at 1 and increase by the step each time next is reached
-    For i = 1 To 10 Step 1
-        ' Remember i = 1 to 10, so each time this code is run 'i' will increase by one
-        ' The end result is the first row counting up from 1 to 10
+    Dim i As Integer   			'Create a variable to use as a loop counter
+    							'Repeat code between 'For' and 'Next' until 'i' reaches 10
+    For i = 1 To 10 Step 1		'Start i at 1, increment i by 1, stop if i equals 10
         Cells(1, i).Value = i   'Set the value of Row 1, Column number 'i' to the value of i
-    Next
+    Next						'Increment loop counter and start next loop iteration
 End Sub
 ```
 
@@ -31,21 +27,23 @@ Result:
 --
 For loops are very useful if you want to repeat a block of code on every row or column.
 
+*Note: `Step 1` is omitted from the for loop in this example. `Step 1` is the default and does not need*
+*to be specified unless you want to change it. For example you can step backwards using `Step -1`.*
+
 Here is an example that gives rows alternating colors
 ```VB
 Sub Example()
-    Dim i As Integer                    'Create a variable to use as a loop iterator
-    Dim Usedrange As Range              'Create a variable to access cells on our worksheet
-    Set Usedrange = Sheet1.Usedrange    'Set the variable UsedRange to the range containing data on Sheet1
+    Dim i As Integer                            'Create a variable to use as a loop counter
+    Dim TotalRows As Long                       'Create a variable to hold the number or rows on Sheet1
+    TotalRows = Sheet1.UsedRange.Rows.Count     'Set TotalRows to the number of rows containing data on Sheet1
 
-    ' This will repeat the code between 'For' and 'Next' until 'i' reaches
-    ' the number of rows in UsedRange
-    For i = 1 To Usedrange.Rows.Count Step 1
-        'Color even numbered rows light blue and odd numbered rows dark blue
-        If i Mod 2 = 0 Then
-            Usedrange.Rows(i).Interior.Color = RGB(184, 204, 228)   'Light Blue
-        ElseIf i Mod 2 = 1 Then
-            Usedrange.Rows(i).Interior.Color = RGB(79, 129, 189)    'Dark Blue
+    'Repeat code between 'For' and 'Next'
+    'until 'i' equals the number of rows on Sheet1
+    For i = 1 To TotalRows
+        If i Mod 2 = 0 Then                                                     'If i is an even number
+            Sheet1.UsedRange.Rows(i).Interior.Color = RGB(184, 204, 228)        'Color the row light blue
+        ElseIf i Mod 2 = 1 Then                                                 'If i is an odd number
+            Sheet1.UsedRange.Rows(i).Interior.Color = RGB(79, 129, 189)         'Color the row dark blue
         End If
     Next
 End Sub
@@ -82,7 +80,7 @@ A **Do While** loop repeats a block of code while a condition is true.
 ```VB
 Sub Example()
     Range("A1").Select                                  'Select cell A1
-    Do While Selection.Value = "1"                      'Repeat the code between 'Do' and 'Loop' while the value of the selected cell is 1
+    Do While Selection.Value = "1"                      'Repeat code between 'Do' and 'Loop' while the selected cell is 1
         Selection.Interior.Color = RGB(64, 128, 200)    'Color the selected cell blue
         Selection.Offset(1, 0).Select                   'Select the cell below our current selection
     Loop                                                'Start next loop iteration
@@ -100,7 +98,7 @@ An **If** statment executes a block of code if a statement is true or false.
 
 ```VB
 Sub Example()
-    Const B As Boolean = True   'Create a constant with it's value set to true
+    Const B As Boolean = True   	'Create a constant with it's value set to true
 
     If B = True Then                'If B is True Then
         Range("A1").Value = "True"  'Set A1 to "True"
@@ -116,7 +114,7 @@ You can use an **Else** statement to define what happens if the boolean operatio
 
 ```VB
 Sub Example()
-    Const B As Boolean = False   'Create a constant with it's value set to false
+    Const B As Boolean = False   		'Create a constant with it's value set to false
 
     If B = True Then                    'if B is True then
         Range("A1").Value = "True"      'Set A1 to "True"
@@ -152,3 +150,30 @@ Result:
 <sub>[Go to top](#pagetop)</sub>
 
 ----------
+### <a name=selcase ref=#selcase>Select Case</a> ###
+A **Select Case** statement allows you to run a block of code based on a variable or objects value.
+
+```VB
+Sub Example()
+    Const i As Integer = 10     'Create an integer named i and set its value to 10
+
+    Select Case i				'Check the value of i
+        Case 1:                             'If i is 1
+            Range("A1").Value = "i = 1"     'Set A1 to "1 = 1"
+        Case 3, 5:                                      'If i is 3, 4, or 5
+            Range("A1").Value = "i is 3, 4, or 5"       'Set A1 to "i is 3, 4, or 5"
+        Case 6 To 10:                                               'If i is 6, 7, 8, 9, or 10 (the specified range is inclusive)
+            Range("A1").Value = "i is a number between 6 and 10"    'Set A1 to "i is a number 6 to 10"
+        Case Else                                                               'If none of the above statments are true
+            Range("A1").Value = "i is less than 1, greater than 10, or is 4"    'Put this sentence in cell A1
+    End Select
+End Sub
+```
+
+Result:
+>![Result](./images/SelCase_Result.jpg)
+
+<sub>[Go to top](#pagetop)</sub>
+
+----------
+<br \><br \><br \><br \><br \><br \><br \><br \><br \>

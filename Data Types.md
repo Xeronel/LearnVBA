@@ -38,9 +38,9 @@ A **Boolean** value can be True or False.
 
 ```VB
 Sub Example()
-	Dim IsEqual as Boolean		'Create a variable of type Boolean named 'IsEqual'
-	IsEqual = 1 = 2				'Store the result of 1 = 2 in IsEqual
-	Range("A1").Value = IsEqual	'Set A1 to the value of IsEqual
+	Dim IsEqual as Boolean			'Create a variable of type Boolean named 'IsEqual'
+	IsEqual = 1 = 2					'Store the result of 1 = 2 in IsEqual
+	Range("A1").Value = IsEqual		'Set A1 to the value of IsEqual
 End Sub
 ```
 
@@ -73,7 +73,7 @@ A **Long** can be any whole number between -2,147,483,648 and 2,147,483,647.
 ```VB
 Sub Example()
     Dim l As Long           'Create a variable of type long named 'l'
-    l = Sheet1.Rows.Count   'Store the number of rows on Sheet1 in l
+    l = Sheet1.Rows.Count	'Store the number of rows on Sheet1 in l
     Range("A1").Value = l   'Set the value of cell A1 to the value of l
 End Sub
 ```
@@ -175,16 +175,16 @@ A **Variant** can hold any kind of data including Empty, Error, Nothing, and Nul
 
 ```VB
 Sub Example()
-    Dim MyVar As Variant  				'Create a variable  of type Variant named 'MyVar'
+    Dim MyVar As Variant  					'Create a variable  of type Variant named 'MyVar'
 
-    MyVar = "A"							'Store the string A in MyVar
-    Range("A1").Value = TypeName(MyVar) 'Set A1 to the current data type of MyVar
+    MyVar = "A"								'Store the string A in MyVar
+    Range("A1").Value = TypeName(MyVar) 	'Set A1 to the current data type of MyVar
 
-    MyVar = 1							'Store the integer 1 in MyVar
-    Range("B1").Value = TypeName(MyVar) 'Set B1 to the current data type of MyVar
+    MyVar = 1								'Store the integer 1 in MyVar
+    Range("B1").Value = TypeName(MyVar)		'Set B1 to the current data type of MyVar
 
-    MyVar = True						'Store the boolean value True in MyVar
-    Range("C1").Value = TypeName(MyVar)	'Set C1 to the current data type of MyVar
+    MyVar = True							'Store the boolean value True in MyVar
+    Range("C1").Value = TypeName(MyVar)		'Set C1 to the current data type of MyVar
 End Sub
 ```
 
