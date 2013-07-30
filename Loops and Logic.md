@@ -8,7 +8,7 @@
 |[Select Case](#selcase)|Choose which block of code to run based on somethings value|
 ----------
 
-### <a name=for href=#for>For</a> ###
+### <a name="for" href="#for">For</a> ###
 A **For** loop repeats a block of code the specified number of times.
 
 ```VB
@@ -55,7 +55,7 @@ Result:
 <sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name=dountil href=#dountil>Do Until</a> ###
+### <a name="dountil" href="#dountil">Do Until</a> ###
 A **Do Until** loop repeats a block of code until a condition is met.
 
 ```VB
@@ -74,7 +74,7 @@ Result:
 <sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name=dowhile href=#dowhile>Do While</a> ###
+### <a name="dowhile" href="#dowhile">Do While</a> ###
 A **Do While** loop repeats a block of code while a condition is true.
 
 ```VB
@@ -93,7 +93,7 @@ Result:
 <sub>[Go to top](#pagetop)</sub>
 
 ----------
-### <a name=if href=#if>If, Then, Else</a> ###
+### <a name="if" href="#if">If, Then, Else</a> ###
 An **If** statment executes a block of code if a statement is true or false.
 
 ```VB
