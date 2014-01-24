@@ -1,11 +1,5 @@
 ## <a name="pagetop" href="#pagetop">Programming Basics</a> ##
 
-### Sections ###
-
-### Keywords ###
-=======
-[Variables](#variables)
-
 ----------
 ### <a name=variables href=#variables>Variables</a> ###
 A **Variable** is a named place in memory used to store data. Every variable has a **type**
