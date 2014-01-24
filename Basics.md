@@ -2,13 +2,9 @@
 
 ### Sections ###
 
-<<<<<<< HEAD
-----------
 ### Keywords ###
 =======
 [Variables](#variables)
-
->>>>>>> origin/development
 
 ----------
 ### <a name=variables href=#variables>Variables</a> ###
